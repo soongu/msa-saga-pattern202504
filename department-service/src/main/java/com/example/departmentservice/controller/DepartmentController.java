@@ -2,17 +2,17 @@ package com.example.departmentservice.controller;
 
 import com.example.departmentservice.entity.Department;
 import com.example.departmentservice.service.DepartmentService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/departments")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DepartmentController {
 
-    private  DepartmentService departmentService;
+    private final DepartmentService departmentService;
 
     @PostMapping
     public ResponseEntity<Department> saveDepartment(@RequestBody Department department){
